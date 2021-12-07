@@ -1,0 +1,34 @@
+ /* <!-- تم بفضل الله --> 
+ <!-- اللهم صل وسلم وبارك علي سيدنا محمد -->
+ <!-- Ahmed Adel --> */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+section {
+    height: 92vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+            
+    
+}
+img {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    z-index: -3;
+}
+
+
+
+
+@media (min-width:993px)  {  /* LapTop Screen */
+    section {
+       height: 67.8vh;  
+    }
+}

@@ -1,0 +1,79 @@
+ /* <!-- تم بفضل الله --> 
+ <!-- اللهم صل وسلم وبارك علي سيدنا محمد -->
+ <!-- Ahmed Adel --> */
+
+ 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+section {
+
+    letter-spacing: 1px;
+     
+  }
+
+
+
+.section2 {
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+}
+
+
+
+.information a[target="blank"] {
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #0d6efd;
+    color: #0d6efd;
+    font-size: 19px;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #0d6efd;
+
+}
+
+/******** Span ***********/
+.text-primary {
+    font-size: 17px;
+}
+
+p span {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/***************** Media *********************/
+
+@media (min-width:0px) and (max-width:576px) {
+
+    /* Mobile Screen */
+  
+    .container1 {
+            padding-top: 75px;
+    }
+ 
+
+}
+
+@media (min-width:577px) and (max-width:768px) {
+
+    /* iPad Screen */
+ 
+    .container1 {
+        padding-top: 75px;
+}
+
+
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    /* Taplet Screen */
+    .container1 {
+        padding-top: 95px;
+    }
+}
+

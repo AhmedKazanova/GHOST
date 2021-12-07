@@ -1,0 +1,62 @@
+<!-- تم بفضل الله -->
+<!-- اللهم صل وسلم وبارك علي سيدنا محمد -->
+<!-- Ahmed Adel -->
+
+
+<section>
+    <div class="col-10 col-md-8 col-lg-9 m-auto text-center ">
+        <h3 class="mb-5 ">Register Now </h3>
+
+        <form [formGroup]='RegisterForm' (ngSubmit)="Register(RegisterForm)">
+
+            <div class="col-12 col-md-12 col-lg-8 m-auto">
+                <input formControlName="first_name" type="text" maxlength="8" min="3" placeholder="First Name"
+                    class="form-control my-2 " autofocus>
+                <p *ngIf=" RegisterForm.get('first_name')?.touched && RegisterForm.get('first_name')?.errors?.required "
+                    class="alert alert-danger p-1 my-2  ">First Name Is required </p>
+                <p *ngIf="RegisterForm.get('first_name')?.errors?.pattern" class=" alert alert-danger p-1 my-2">
+                    Character Max 8 Min 3 </p>
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-8 m-auto">
+                <input formControlName="last_name" maxlength="8" minlength="3" type="text" placeholder="Last Name"
+                    class="form-control  mb-2">
+                <p *ngIf=" RegisterForm.get('last_name')?.touched && RegisterForm.get('last_name')?.errors?.required "
+                    class="alert alert-danger p-1 my-2 ">Last Name Is required </p>
+                <p *ngIf="RegisterForm.get('last_name')?.errors?.pattern" class="alert alert-danger p-1 my-2">Character
+                    Max 8 Min 3 </p>
+            </div>
+
+
+            <div class="col-12 col-md-12 col-lg-8 m-auto">
+                <input formControlName="email" type="email" placeholder="Email" class="form-control  mb-2">
+                <p *ngIf=" RegisterForm.get('email')?.touched && RegisterForm.get('email')?.errors?.required "
+                    class="alert alert-danger p-1 my-2 ">Email Is required </p>
+                <p *ngIf="errors" class="alert alert-danger p-1 ">{{errors}}</p>
+                <p *ngIf="RegisterForm.get('email')?.errors?.pattern" class="alert alert-danger p-1 my-2 ">This Is Not Email
+                </p>
+            </div>
+
+
+            <div class="col-12 col-md-12 col-lg-8 m-auto" id="pass">
+                <input id="password" formControlName="password" type="password" placeholder="Password" minlength="8"
+                    maxlength="16" class="form-control  mb-2">
+                <span id="showPassword" (click)="show()" class="show">Show</span>
+                <p *ngIf=" RegisterForm.get('password')?.touched && RegisterForm.get('password')?.errors?.required "
+                    class="alert alert-danger p-1 my-2 ">Password Is required </p>
+                <p *ngIf="RegisterForm.get('password')?.errors?.pattern" class="alert alert-danger p-1 my-2 ">Max Number 16
+                    Min 8 </p>
+            </div>
+
+
+            <div class="col-12 col-md-12 col-lg-8 m-auto">
+                <input formControlName="age" type="number" placeholder="Age" class="form-control mb-2">
+                <p *ngIf=" RegisterForm.get('age')?.touched && RegisterForm.get('age')?.errors?.required "
+                    class="alert alert-danger p-1 my-2 ">Age Is required </p>
+                <p *ngIf="RegisterForm.get('age')?.errors?.min" class="alert alert-danger p-1 my-2  ">Over 18 Years Old</p>
+            </div>
+
+            <button [disabled]="RegisterForm.invalid" type="submit" class="btn  text-white mt-2">Register</button>
+        </form>
+    </div>
+</section>

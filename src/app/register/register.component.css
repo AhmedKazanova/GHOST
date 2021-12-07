@@ -1,0 +1,125 @@
+/* <!-- تم بفضل الله -->
+<!-- اللهم صل وسلم وبارك علي سيدنا محمد -->
+<!-- Ahmed Adel --> */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 10 version
+*/
+
+
+section {
+    height: 115vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+h3 {
+    position: relative;
+    font-size: 40px;
+    
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: textfield;
+    -moz-appearance: none;
+    appearance: none !important;
+}
+
+h3::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 245px;
+    height: 3px;
+    border-radius: 3px;
+    bottom: -10px;
+    right: 0px;
+    left: calc(50% - 125px);
+}
+
+section input::-webkit-input-placeholder {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+section input::-moz-placeholder {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+section input:-ms-input-placeholder {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+section input::-ms-input-placeholder {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+section input::placeholder {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+input:focus {
+    border: none !important;
+    outline: none !important;
+    -webkit-box-shadow: white 1px 1px 3px 3px !important;
+    box-shadow: white 1px 1px 3px 3px !important;
+}
+
+input {
+    font-size: 19px;
+    font-weight: 500;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#pass {
+    position: relative;
+}
+
+#pass .show {
+    cursor: pointer;
+    position: absolute;
+    width: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    height: 44px;
+    background-color: gray;
+    top: -0.5px;
+    right: -3px;
+    border-top-right-radius: 4.5px;
+    border-bottom-right-radius: 4.5px;
+}
+
+.btn {
+    -webkit-box-shadow: 0.5px 1px 7px 3px white;
+    box-shadow: 0.5px 1px 7px 3px white;
+}

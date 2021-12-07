@@ -1,0 +1,84 @@
+
+<!-- تم بفضل الله --> 
+<!-- اللهم صل وسلم وبارك علي سيدنا محمد -->
+<!-- Ahmed Adel -->
+
+
+
+<section>
+
+
+    <div class="container container1 pt-5 ">
+        <div class="row pt-5">
+
+            <div class="movieimg col-12 col-sm-12 col-md-6 col-lg-4 p-3 wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.3s">
+                <a target="blank" [href]="TvPageMovie"> <img [src]="ImgSrc+TvDetail.poster_path" class="w-100"
+                        alt=""></a>
+            </div>
+
+            <div class="information col-12 col-sm-12 col-md-6 col-lg-8 px-3 px-md-0 mt-2 px-lg-4 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.3s">
+
+                <h2 class="my-4 text-center fw-bold">{{TvDetail.name}} <span class="vote ms-2">
+                        {{TvDetail.vote_average}}</span></h2>
+
+                <p class="my-2 "><span class="text-primary ">Home Page</span> :
+                    <a target="blank" [href]="TvPageMovie"> WebSite </a>
+                </p>
+
+
+                <p *ngIf="TvDetail.first_air_date != null" class="my-2 "><span class="text-primary ">First Air
+                        Date</span> : {{TvDetail.first_air_date.split('-').reverse().join('-')}} </p>
+
+
+                <p *ngIf="TvDetail.last_air_date != null" class="my-2 "> <span class="text-primary ">Last Air
+                        Date</span> : {{TvDetail.last_air_date.split('-').reverse().join('-')}} </p>
+
+
+                <p *ngIf="TvDetail.last_air_date == null" class="my-2 "><span class="text-primary ">Next Episode To Air
+                    </span>: {{TvDetail.next_episode_to_air.air_date.split('-').reverse().join('-')}} - Episode {{
+                    TvDetail.next_episode_to_air.episode_number}} </p>
+
+
+                <p *ngIf="TvDetail.last_episode_to_air != null" class="my-2 "><span class="text-primary ">Number OF
+                        Episodes</span> : {{TvDetail.last_episode_to_air.episode_number}} </p>
+
+
+
+                <p *ngIf="TvDetail.last_episode_to_air.season_number != null" class="my-2 "><span
+                        class="text-primary ">Season </span> :
+                    {{TvDetail.last_episode_to_air.season_number}} </p>
+
+
+                <p *ngIf="TvDetail.languages != null" class="my-2 "> <span class="text-primary  ">Languages</span> :
+                    <span class="capitalize">{{TvDetail.languages}}</span>
+                </p>
+
+
+                <p *ngIf="TvDetail.origin_country!= null" class="my-2 "><span class="text-primary ">Origin
+                        Country</span> : {{TvDetail.origin_country}} </p>
+
+
+                <p *ngIf="TvDetail.spoken_languages[0].english_name != null  " class="my-2 "> <span
+                        class="text-primary ">Spoken
+                        Languages</span> : {{TvDetail.spoken_languages[0].english_name}} </p>
+
+                <p *ngIf="TvDetail.production_companies[0].name != null" class="my-2 "><span
+                        class="text-primary ">Production
+                        Company</span> : {{TvDetail.production_companies[0].name}} </p>
+
+                <p *ngIf="TvDetail.created_by != null " class="my-2 "><span class="text-primary ">Created By</span> :
+                    {{TvDetail.created_by[0].name}} </p>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<section class="">
+
+    <div class="container container2 px-3 px-md-3  ">
+        <p class=" fs-5"> <span class="text-primary fw-bold">The Story </span>: {{TvDetail.overview}} </p>
+    </div>
+
+</section>

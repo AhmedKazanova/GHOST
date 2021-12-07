@@ -1,0 +1,258 @@
+/* بسم الله الرحمن الرحيم*/
+
+
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 10 version
+*/
+
+nav
+ {
+    z-index: 99;
+}
+
+.progress-bar {
+    height: 3px;
+    z-index: -1;
+    
+}
+
+nav h1,
+.logo li,
+.welcome span,
+.mediaBar,
+.sidenav span ,
+.sidenav a{
+    cursor: pointer;
+}
+
+nav h1 {
+
+    text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 7px #fff, 0 0 1px #228dff,
+        0 0 1px #228dff, 0 0 1px #228dff, 0 0 1px #228dff, 0 0 5px #228dff;
+}
+
+nav h1::after {
+    content: "";
+    height: 2px;
+    border-radius: 3px;
+    width: 0%;
+    background-color: wheat;
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+}
+
+nav h1:hover::after {
+    width: 100%;
+    left: 0%;
+}
+
+.logo li {
+    list-style: none;
+    font-size: 1.2rem;
+    line-height: 1.7;
+
+}
+
+.logo li:hover {
+    color: wheat;
+}
+
+.navbar-link .ULone li:nth-child(1)::after,
+.navbar-link .ULone li:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0px;
+    bottom: 0.5px;
+    left: 0px;
+    border-radius: 1x;
+    background-color: wheat;
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+
+}
+
+.navbar-link .ULone li:nth-child(1):hover::after,
+.navbar-link .ULone li:nth-child(2):hover:after {
+    width: 100%;
+}
+
+.navbar-link ul li:nth-child(3):hover .dropdown::after,
+.navbar-link ul li:nth-child(3):hover .dropdown {
+    visibility: visible;
+}
+
+.navbar-link ul .dropdown {
+    top: 44px;
+    left: -6px;
+    width: 110px;
+    visibility: hidden;
+    border-radius: 3px;
+}
+
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 10px);
+    border: 10px solid transparent;
+    border-top: 0px;
+    border-bottom: 10px solid #333;
+    visibility: hidden;
+}
+
+.navbar-link ul .dropdown li {
+    font-size: 1.2rem;
+}
+
+.navbar-link ul .dropdown li:nth-child(2) {
+    border-top: 1px solid rgba(30, 30, 30, 0.8);
+    border-bottom: 1px solid rgba(30, 30, 30, 0.8);
+}
+
+.navbar-link ul li .dropdown li:hover {
+    background-color: rgba(35, 35, 35, 1);
+    color: white;
+}
+
+.welcome .register:hover {
+    color: wheat;
+    border-bottom: 0.5px solid wheat;
+}
+
+.welcome span:nth-child(3):hover {
+
+    color: rgba(255, 0, 0, 0.5);
+}
+
+/************ Menu Bar****************************/
+.mediaBar {
+    border: 2.5px solid white;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 27px;
+    height: 3px;
+    margin: 5px 0;
+    -webkit-box-shadow: 0px 0px 0.5px 0.5px white;
+    box-shadow: 0px 0px 0.5px 0.5px white;
+}
+
+/***************************************************/
+/* The side navigation menu */
+.sidenav {
+
+    /* 100% Full-height */
+    width: 0%;
+    /* 0 width - change this with JavaScript */
+    z-index: 99;
+    /* Black*/
+    overflow: hidden;
+    /* Disable horizontal scroll */
+    /* Place content 60px from the top */
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
+    /* 0.6 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 10px 0px 10px 33px;
+    text-decoration: none;
+    font-size: 25px;
+
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+
+}
+
+.sidenav a {
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    list-style: none;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav span {
+    left: 33px;
+    font-size: 36px;
+
+}
+
+.Bardropdown {
+    list-style: none;
+    top: 58px;
+    left: 96px;
+    width: 110px;
+    visibility: hidden;
+
+}
+
+.Bardropdown li:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.Bardropdown::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: -10px;
+    left: calc(50% - 10px);
+    border: 10px solid transparent;
+    border-top: 0px;
+    border-bottom: 10px solid rgb(33, 37, 41);
+    visibility: hidden;
+
+}
+
+.Trending:hover .Bardropdown::after,
+.Trending:hover .Bardropdown {
+    visibility: visible;
+}
+
+/******************************************************/
+.users input:focus,
+.users input ,
+.users button{
+    outline: none;
+    border: none;
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 7px;
+}
+
+@media (min-width:0px) and (max-width:576px) {
+    .mediaBar {
+        display: block !important;
+        margin: 10px 25px;
+    }
+}
+
+/* User Input */
+@media (min-width:769px) and (max-width:996px) {
+
+    /* Taplet Screen */
+    .users input:nth-child(2) {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+}

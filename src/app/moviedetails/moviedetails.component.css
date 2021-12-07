@@ -1,0 +1,87 @@
+
+
+
+/* <!-- تم بفضل الله --> 
+<!-- اللهم صل وسلم وبارك علي سيدنا محمد -->
+<!-- Ahmed Adel --> */
+
+
+
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+section {
+    letter-spacing: 1px;
+   
+}
+
+
+.vote {
+  
+    background-color: rgba(57, 119, 253, 0.5);
+   border: 1px solid white;
+   font-size: 17px;
+   cursor: pointer;
+   padding: 6px;
+   border-radius: 50%;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+    
+}
+ul li {
+    display: inline-block;
+}
+.information a {
+    text-decoration: none;
+    text-shadow: 1px 1px 1px white;
+    font-size: 19px;
+    letter-spacing: 2px;
+
+}
+.genres {
+    
+    background-color:rgba(57, 129, 253, 1) ;
+    border: 1px solid white;
+    margin: 0px 7px;
+    font-size: 18px;
+    padding: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+   
+    
+}
+.genres:hover {
+   background-color:  #0d6efd;
+}
+@media (min-width:0px) and (max-width:576px)  {  /* Mobile Screen */
+
+    .genres {
+        padding: 3px;
+        font-size: 16px;
+        margin: 0px 2px;
+    }
+    .tst span:nth-child(4) {
+        display: none;
+     }
+   
+}
+
+
+
+@media (min-width:768px) and (max-width:992px)  {  /* Taplet Screen */
+    .genres {
+        
+        margin: 0px 3px;
+    }
+  
+}
