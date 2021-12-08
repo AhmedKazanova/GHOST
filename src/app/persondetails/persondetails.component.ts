@@ -27,12 +27,10 @@ export class PersondetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._wowservice.init()
-    
     this.id = this._ActivatedRoute.snapshot.params.id
-
+    this._wowservice.init() 
     this.CallingApi = this._ApiService.GetPersonDetails(this.id).subscribe((Data) => {
-
+      
       this.PersonDetail = Data
       this.PersonPage = this.PersonDetail.homepage
       this.Gender = this.PersonDetail.gender

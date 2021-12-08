@@ -183,10 +183,13 @@ nav h1:hover::after {
 }
 
 .sidenav a {
-    -webkit-transition: 0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
     list-style: none;
+
+    
+
 }
 
 /* Position and style the close button (top right corner) */
@@ -243,7 +246,7 @@ nav h1:hover::after {
 @media (min-width:0px) and (max-width:576px) {
     .mediaBar {
         display: block !important;
-        margin: 10px 25px;
+        
     }
 }
 

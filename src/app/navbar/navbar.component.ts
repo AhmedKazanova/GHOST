@@ -34,7 +34,6 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.callfun()
     this.sayhello()
     this._UsersService.userData.subscribe(() => {
       if (this._UsersService.userData.getValue() != null) {

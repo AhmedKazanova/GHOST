@@ -13,7 +13,7 @@
 <header *ngIf="Error" class="vh-100 d-flex justify-content-center position-relative" >
     <div class="cover position-absolute top-0 bottom-0 end-0 start-0">
     </div>
-    <div class="container    wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.3s">
+    <div class="container    wow fadeInDown" data-wow-duration="0.8s" data-wow-delay="0.4s">
         <h2 id="Actros">Actros</h2>
         <owl-carousel-o [options]="customOptions">
             <ng-container *ngFor="let Person of AllPerson">
@@ -47,7 +47,7 @@
 
     <div class="container">
         <div class="row">
-            <div data-wow-offset="15" data-wow-duration="0.5s" data-wow-delay="0.3s" *ngFor="let Person of AllPerson" class="col-12 col-sm-6 col-md-4 col-lg-3  p-3  wow fadeIn   " 
+            <div data-wow-offset="15" data-wow-duration="0.6s" data-wow-delay="0.3s" *ngFor="let Person of AllPerson" class="col-12 col-sm-6 col-md-4 col-lg-3  p-3  wow fadeIn   " 
             [style.display]="Person.profile_path == null?'none':'block'">
                 <div class="Person position-relative p-0" >
                     <img [src]="ImgSrc+Person.profile_path "  class="w-100">

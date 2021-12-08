@@ -73,38 +73,47 @@ function removed() {
 }
 /** funtion sideBar in phone  **/
 function MyFun() {
-    let mediaBar = document.getElementById('mediaBar')
+
     let mySidenav = document.getElementById('mySidenav')
-    let close = document.getElementById('close')
     let Trending = document.getElementById("Trending")
     let Home = document.getElementById("Home")
     let About = document.getElementById("About")
     let Login = document.getElementById("Login")
     let Register = document.getElementById("Register")
+    let Name = document.getElementById("Name")
+    let Logout = document.getElementById("Logout")
 
-    mediaBar.addEventListener('click', function () {
         mySidenav.style.width = '100%'
         Home.style.left = '0px'
+        Name.style.left = '0px'
+        Logout.style.left = '0px'
         About.style.left = '0px'
         Login.style.left = '0px'
         Trending.style.left = '0px'
         Register.style.left = '0px'
-    })
-    close.addEventListener('click', function () {
-        mySidenav.style.width = '0%'
-        Home.style.left = '250px'
-        Register.style.left = '250px'
-        About.style.left = '260px'
-        Login.style.left = '280px'
-        Trending.style.left = '300px'
-    })
+
 }
 function ClickClosing() {
+    
+
+
+    let mySidenav = document.getElementById('mySidenav')
+    let Trending = document.getElementById("Trending")
+    let Home = document.getElementById("Home")
+    let About = document.getElementById("About")
+    let Login = document.getElementById("Login")
+    let Register = document.getElementById("Register")
+    let Name = document.getElementById("Name")
+    let Logout = document.getElementById("Logout")
+    
     mySidenav.style.width = '0%'
-    Home.style.left = '250px'
-    About.style.left = '260px'
-    Settings.style.left = '280px'
-    Trending.style.left = '300px'
+    Name.style.left = '300px'
+    Logout.style.left = '300px'
+    Home.style.left = '300px'
+    Register.style.left = '300px'
+    About.style.left = '300px'
+    Login.style.left = '300px'
+    Trending.style.left = '250px'
 }
 /******************************************/
 function showPasword(){

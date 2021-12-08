@@ -10,6 +10,7 @@ declare var progress:any
 export class AppComponent {
 
   constructor(){
+     
   }
 
   ngOnInit() {
