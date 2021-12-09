@@ -8,11 +8,12 @@
 */
 
 section {
-    display: none;
-    margin-bottom: 50px;
-    padding-top: 70px;
+    padding-top: 70px; 
 }
 
+.container {
+    display: none;
+}
 .container p {
     font: 19px;
     margin: 0px;
@@ -71,4 +72,10 @@ img {
 }
 
 
+@media (min-width:768px) {  /* Taplet Screen */
+
+    .container{
+        padding-bottom: 23vh;
+    }
+}
 

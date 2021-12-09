@@ -3,11 +3,11 @@
     <div class="container  d-flex justify-content-between p-0">
 
         <div class="logo d-flex align-items-center text-center">
-            <h1 routerLink='' class="m-0 ms-3 text-white position-relative ">Ghost Cinema</h1>
+            <h1 routerLink='' class="m-0 ms-3 py-2  text-white position-relative ">Ghost Cinema</h1>
             <div class="navbar-link text-center d-none d-md-inline-block">
-                <ul class="m-0 ULone mt-2 " >
-                    <li routerLink='Home' class="d-inline-block ms-3 py-2 position-relative" >Home</li>
-                    <li routerLink='About' class="d-inline-block ms-3 py-2 position-relative">About</li>
+                <ul class="m-0  mt-2 " >
+                    <li routerLink='Home' class="d-inline-block ms-3 py-2  position-relative navhover" >Home</li>
+                    <li routerLink='About' class="d-inline-block ms-3 py-2  position-relative navhover">About</li>
                     <li  class="position-relative" class="d-inline-block ms-3 py-2 position-relative">Trending <svg xmlns="http://www.w3.org/2000/svg" width="19"
                             height="25" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -15,8 +15,8 @@
                         </svg>
 
                         <ul class="dropdown position-absolute text-center bg-dark p-0"  >
-                            <li routerLink='Movies'  class="d-block m-0 position-relative py-1"> Movies</li>
-                            <li routerLink='Tv' class="d-block m-0 position-relative py-1"> TV</li>
+                            <li routerLink='Movies'  class="d-block m-0 position-relative py-1 position-relative dropdownhover"> Movies</li>
+                            <li routerLink='Tv' class="d-block m-0 position-relative py-1 Tv position-relative dropdownhover"> TV</li>
                             <li routerLink='Actors' class="d-block m-0 position-relative py-1">Actors</li>
                         </ul>
                     </li>
@@ -52,7 +52,7 @@
             <div class="bar3 bg-white"></div>
         </div>
 
-        <div id="mySidenav" class="sidenav pt-5 bg-dark position-fixed top-0 end-0 h-100">
+        <div id="mySidenav" class="sidenav pt-5 bg-dark position-fixed top-0 end-0  h-100">
 
             <span href="javascript:void(0)" (click)="clickclosing()" class="closebtn mb-5 position-absolute top-0">&times;</span>
 

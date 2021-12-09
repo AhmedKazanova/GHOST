@@ -15,7 +15,7 @@ nav
 }
 
 .progress-bar {
-    height: 3px;
+    height: 1.7px;
     z-index: -1;
     
 }
@@ -43,7 +43,7 @@ nav h1::after {
     background-color: wheat;
     position: absolute;
     left: 50%;
-    bottom: -3px;
+    bottom: 7px;
     -webkit-transition: 0.6s;
     -o-transition: 0.6s;
     transition: 0.6s;
@@ -65,13 +65,13 @@ nav h1:hover::after {
     color: wheat;
 }
 
-.navbar-link .ULone li:nth-child(1)::after,
-.navbar-link .ULone li:nth-child(2)::after {
-    content: "";
+.navhover::after,
+.navhover::after {
+   content: "";
     position: absolute;
     height: 2px;
     width: 0px;
-    bottom: 0.5px;
+    bottom: 6px;
     left: 0px;
     border-radius: 1x;
     background-color: wheat;
@@ -81,8 +81,10 @@ nav h1:hover::after {
 
 }
 
-.navbar-link .ULone li:nth-child(1):hover::after,
-.navbar-link .ULone li:nth-child(2):hover:after {
+
+.navhover:hover::after,
+.navhover:hover:after,
+.dropdownhover:hover::after {
     width: 100%;
 }
 
@@ -123,6 +125,20 @@ nav h1:hover::after {
     background-color: rgba(35, 35, 35, 1);
     color: white;
 }
+.dropdownhover::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0px;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 1x;
+    background-color: wheat;
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+
+}
 
 .welcome .register:hover {
     color: wheat;
@@ -134,6 +150,9 @@ nav h1:hover::after {
     color: rgba(255, 0, 0, 0.5);
 }
 
+.dropdown .TV {
+    color: red !important;
+}
 /************ Menu Bar****************************/
 .mediaBar {
     border: 2.5px solid white;
