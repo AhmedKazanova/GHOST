@@ -71,7 +71,7 @@
                         <h3 [routerLink]="['/Moviedetails' , Movie.id  ]" class="m-auto position-relative "> {{Movie.title}} </h3>
                         <p class="Media_type w-100  "> {{Movie.media_type}} <span> ( {{Movie.original_language}}
                                 {{Movie.gender}} )</span></p>
-                        <p > {{Movie.overview.split(' ').splice(0,18).join(' ')}}... </p>
+                        <p > {{Movie.overview.split(' ').splice(0,18).join(' ')}}... <br> <a [routerLink]="['/Moviedetails' , Movie.id  ]" class="text-primary"> Read More</a> </p>
                     </div>
                 </div>
             </div>

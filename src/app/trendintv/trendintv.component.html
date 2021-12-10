@@ -63,7 +63,7 @@
                     <div  class="TvTitle d-flex justify-content-center top-0 end-0 start-0 bottom-0 text-center position-absolute ">
                             <h3 [routerLink]="['/Tvdatails' ,Tv.id ]" class="m-auto position-relative ">  {{Tv.name}}</h3>
                         <p class="Media_type w-100  "> {{Tv.media_type}} <span> ( {{Tv.original_language}} )</span></p>
-                        <p > {{Tv.overview.split(' ').splice(0,18).join(' ')}}... </p>
+                        <p > {{Tv.overview.split(' ').splice(0,18).join(' ')}}... <br> <a [routerLink]="['/Tvdatails' ,Tv.id ]" class="text-primary"> Read More</a> </p>
                     </div>
                 </div>
             </div>
