@@ -7,6 +7,7 @@ import { Component, OnInit , OnDestroy } from '@angular/core';
 import { ApiService } from '../api.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgwWowService } from 'ngx-wow';
+import { ActivatedRoute, Router } from '@angular/router';
 
 declare var $:any;
 
@@ -20,27 +21,26 @@ export class TrendintvComponent implements OnInit , OnDestroy {
   Error:boolean= true ;
   CallingApi:any=''
   totalItems:number = 0;
-  page:number = 0
+  page:number = 1
+  id:any
   AllTv:any[] = []
   ImgSrc:string = 'https://image.tmdb.org/t/p/w500'  ;
 
-  constructor(private _ApiService:ApiService , private _wowservice:NgwWowService ) {
-
-    
-
-   }
+  constructor(private _ApiService:ApiService , private _wowservice:NgwWowService , private _ActivatedRoute:ActivatedRoute , private _Router:Router ) {}
    ngOnInit(): void {
     this._wowservice.init()
     this.Jquery()
-    this.ReturnTv(1)
+    this.id = this._ActivatedRoute.snapshot.params.id
+    this.ReturnTv(this.id)
   }
 
    ReturnTv(number:number){
       this.CallingApi = this._ApiService.GetTrendingTv(number,'tv').subscribe(
         (Data)=>{
-      this.totalItems = Data.total_results
+      this.totalItems = Data.total_results - 15000
       this.AllTv=Data.results
       this.page = Data.page
+    
     },(error)=>{
       this.Error = error.ok
     })
@@ -48,11 +48,10 @@ export class TrendintvComponent implements OnInit , OnDestroy {
    }
 
 
-  pageChanged(){
-
-    this.ReturnTv(this.page)
-
-  }
+   pageChanged(event:any) {
+    this._Router.navigate(['Tv' , event])
+    this.ReturnTv(event)
+}
   ngOnDestroy(){
     if( this.CallingApi ) {
       this.CallingApi.unsubscribe()
@@ -83,6 +82,7 @@ export class TrendintvComponent implements OnInit , OnDestroy {
     },
     nav: false
   }
+
   Jquery():any{
     $(document).ready(()=>{
       $(window).scrollTop();
@@ -90,19 +90,4 @@ export class TrendintvComponent implements OnInit , OnDestroy {
         $('html,body').animate({'scrollTop':'0'} , 600)
     });
   }); 
-  $(window).scroll(function(){
-    if($(window).scrollTop() > $('#Setion1').offset().top - 100 ) {
-      $('#Btn').fadeIn(600)
-    } else {
-      $('#Btn').hide()
-    }
-})
-setInterval(()=>{
-
-  $('#Adress').fadeToggle(2500)
-},2500)
-
-
-  }
-
-}
+  }}

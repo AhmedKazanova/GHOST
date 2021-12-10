@@ -13,12 +13,19 @@ import { TrendintvComponent } from './trendintv/trendintv.component';
 import { TvdatailsComponent } from './tvdatails/tvdatails.component';
 
 const routes: Routes = [
-  {path:'' , redirectTo:'Home',pathMatch:'full' }, 
-  {path:'Home',component:HomeComponent},
+  {path:'' , redirectTo:'Home/1',pathMatch:'full' }, 
+  {path:'Home' , redirectTo:'Home/1',pathMatch:'full' },
+  {path:'Home/:id',component:HomeComponent},
+  {path:'Actors/:id',component:PersonComponent},
+  {path:'Actors' , redirectTo:'Actors/1',pathMatch:'full' },
+  {path:'Movies/:id',component:TrendingmoviesComponent},
+  {path:'Movies' , redirectTo:'Movies/1',pathMatch:'full' },
+  {path:'Tv/:id',component:TrendintvComponent},
+  {path:'Tv' , redirectTo:'Tv/1',pathMatch:'full' },
+
+
+
   {path:'About',component:AboutComponent},
-  {path:'Movies',component:TrendingmoviesComponent},
-  {path:'Actors',component:PersonComponent},
-  {path:'Tv',component:TrendintvComponent},
   {path:'Login',component:LoginComponent},
   {path:'Moviedetails/:id',component:MoviedetailsComponent},
   {path:'Persondatails/:id',component:PersondetailsComponent},
@@ -31,7 +38,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

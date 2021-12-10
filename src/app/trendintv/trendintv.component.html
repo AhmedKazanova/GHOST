@@ -4,7 +4,7 @@
  <!-- Ahmed Adel -->
 
  <div id="Btn" class="position-fixed">
-    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-arrow-up-circle-fill text-primary" viewBox="0 0 16 16">
+    <svg  width="27" height="27" fill="currentColor" class="bi bi-arrow-up-circle-fill text-primary" viewBox="0 0 16 16">
         <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
       </svg>
 </div>
@@ -40,14 +40,14 @@
 
     <div class="Pagination">
         <ngb-pagination class="d-flex justify-content-center" [collectionSize]="totalItems" [(page)]="page"
-            (pageChange)="pageChanged()" [maxSize]="7" [rotate]="true" [ellipses]="false" [boundaryLinks]="false"
+            (pageChange)="pageChanged($event)" [maxSize]="7" [rotate]="true" [ellipses]="true" [boundaryLinks]="true"
             ngbPaginationNumber current="page" aria-current="page" aria="page">
         </ngb-pagination>
     </div>
 
     <div class="container">
         <div class="row">
-            <div data-wow-offset="15" data-wow-duration="0.6s" data-wow-delay="0.3s" *ngFor="let Tv of AllTv" class="col-12 col-sm-6 col-md-4 col-lg-3  p-3 wow fadeInLeft   ">
+            <div   data-wow-offset="15" data-wow-duration="0.6s" data-wow-delay="0.3s" *ngFor="let Tv of AllTv" class="col-12 col-sm-6 col-md-4 col-lg-3  p-3 wow fadeInLeft ">
 
                 <div class="Tv position-relative   p-0">
 
@@ -58,9 +58,9 @@
 
                     
                     
-                    <img [src]="ImgSrc+Tv.poster_path " class="w-100">
+                    <img   [src]="ImgSrc+Tv.poster_path " class="w-100">
 
-                    <div class="TvTitle d-flex justify-content-center top-0 end-0 start-0 bottom-0 text-center position-absolute ">
+                    <div  class="TvTitle d-flex justify-content-center top-0 end-0 start-0 bottom-0 text-center position-absolute ">
                             <h3 [routerLink]="['/Tvdatails' ,Tv.id ]" class="m-auto position-relative ">  {{Tv.name}}</h3>
                         <p class="Media_type w-100  "> {{Tv.media_type}} <span> ( {{Tv.original_language}} )</span></p>
                         <p > {{Tv.overview.split(' ').splice(0,18).join(' ')}}... </p>
@@ -71,7 +71,7 @@
     </div>
     <div class="Pagination">
         <ngb-pagination class="d-flex justify-content-center" [collectionSize]="totalItems" [(page)]="page"
-            (pageChange)="pageChanged()" [maxSize]="7" [rotate]="true" [ellipses]="false" [boundaryLinks]="false"
+            (pageChange)="pageChanged($event)" [maxSize]="7" [rotate]="true" [ellipses]="true" [boundaryLinks]="true"
             ngbPaginationNumber current="page" aria-current="page" aria="page">
         </ngb-pagination>
     </div>

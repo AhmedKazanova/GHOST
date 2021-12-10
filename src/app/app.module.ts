@@ -16,7 +16,6 @@ import { TrendingmoviesComponent } from './trendingmovies/trendingmovies.compone
 import { TrendintvComponent } from './trendintv/trendintv.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { TvdatailsComponent } from './tvdatails/tvdatails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,7 +47,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    PaginationModule.forRoot(),
     NgbPaginationModule,
     NgbAlertModule,
     ReactiveFormsModule,

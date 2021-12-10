@@ -8,6 +8,7 @@ import { Component, OnInit , OnDestroy } from '@angular/core';
 import { ApiService } from '../api.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgwWowService } from 'ngx-wow';
+import { ActivatedRoute, Router } from '@angular/router';
 
 declare var $:any;
 
@@ -17,47 +18,38 @@ declare var $:any;
   styleUrls: ['./trendingmovies.component.css']
 })
 export class TrendingmoviesComponent implements OnInit , OnDestroy {
-
+  id:any
   CallingApi:any='';
   Error:boolean=true
   ImgSrc:string = 'https://image.tmdb.org/t/p/w500'  ;
   totalItems:number =0;
   page:number = 1
   AllMovies:any[] = [];
-  constructor( private _ApiService:ApiService , private _wowservice:NgwWowService )  { 
+  constructor( private _ApiService:ApiService , private _Router:Router , private _wowservice:NgwWowService , private _ActivatedRoute:ActivatedRoute )  { } 
 
-    
-      
-    
-  } 
   ngOnInit(): void {
     this._wowservice.init()
     this.Jquery()
-    this.ReturnMovies(1)
+    this.id = this._ActivatedRoute.snapshot.params.id
+    this.ReturnMovies(this.id)
 
   }
 
   ReturnMovies(number:number){
-
       this.CallingApi = this._ApiService.GetTrendingMovies(number,'movie').subscribe((Data)=>{
       this.AllMovies = Data.results
-      this.totalItems = Data.total_results
+      this.totalItems = Data.total_results - 15000
       this.page = Data.page
-      
     },(error)=>{
-
       this.Error = error.ok
     })
 
   }
 
-  pageChanged() {
-
-    this.ReturnMovies(this.page)
-    
-  }
-
-
+  pageChanged(event:any) {
+    this._Router.navigate(['Movies' , event])
+    this.ReturnMovies(event)
+}
   ngOnDestroy(){
     if( this.CallingApi ) {
       this.CallingApi.unsubscribe()
@@ -97,19 +89,4 @@ export class TrendingmoviesComponent implements OnInit , OnDestroy {
         $('html,body').animate({'scrollTop':'0'} , 600)
     });
   }); 
-  $(window).scroll(function(){
-    if($(window).scrollTop() > $('#Setion1').offset().top - 100 ) {
-      $('#Btn').fadeIn(600)
-    } else {
-      $('#Btn').hide()
-    }
-})
-setInterval(()=>{
-
-  $('#Adress').fadeToggle(2500)
-},2500)
-
-  }
-
-
-}
+  }}

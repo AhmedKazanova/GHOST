@@ -46,7 +46,7 @@ export class NavbarComponent implements OnInit {
     
     
   }
-  
+
   sayhello(){
 
     let decodeData = JSON.stringify(localStorage.getItem('userToken'))

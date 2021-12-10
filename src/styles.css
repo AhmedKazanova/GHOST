@@ -17,8 +17,8 @@ body , html {
     scroll-behavior: smooth;
 }
 body {
-  
-    background-color: black;
+
+    background-image: url(.././src/assets/img/Backround.jpg);
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
     

@@ -2,6 +2,9 @@ import { Component, OnInit , OnDestroy, Output } from '@angular/core';
 import { ApiService } from '../api.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgwWowService } from 'ngx-wow';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+
 declare var $:any;
 
 
@@ -11,7 +14,8 @@ declare var $:any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit , OnDestroy {
-  page = 1;
+  id:number = 1
+  page:number = 1
   totalItems:number = 0; //عدد الصفحات =  2000
   ReturnAll:any[] = [];
   CallingApi:any = '';
@@ -19,31 +23,22 @@ export class HomeComponent implements OnInit , OnDestroy {
   Error:boolean = true;
 
   
-  constructor( private _ApiService:ApiService , private _wowservice:NgwWowService) { 
-
-
- 
+  constructor( private _ApiService:ApiService ,private _Router:Router , private _wowservice:NgwWowService , private _ActivatedRoute:ActivatedRoute) { 
 
   }
 
   ngOnInit(): void {
     this._wowservice.init()
     this.Jquery()
-    this.HomePages(1)
-    
-   
-   
-
-
+    this.id = this._ActivatedRoute.snapshot.params.id
+    this.HomePages(this.id)
   }
 
     HomePages(PageNumber:number){
-      
-    
         this.CallingApi=  this._ApiService.GetAll(PageNumber).subscribe(
           (Data)=>{
-          this.ReturnAll = Data.results
-          this.totalItems= Data.total_results 
+          this.ReturnAll = Data.results 
+          this.totalItems= Data.total_results - 15000
           this.page = Data.page
         },(error)=>{
           this.Error = error.ok
@@ -53,10 +48,12 @@ export class HomeComponent implements OnInit , OnDestroy {
       
     }
 
-    pageChanged() {
-      this.HomePages(this.page)
+    pageChanged(event:any) {
+        this._Router.navigate(['Home' , event])
+        this.HomePages(event)
     }
 
+  
 
     ngOnDestroy(){
       if( this.CallingApi ) {
@@ -92,27 +89,12 @@ export class HomeComponent implements OnInit , OnDestroy {
   }
 
   Jquery():any{
-    
     $(document).ready(()=>{
       $(window).scrollTop();
       $('#Btn').click(()=>{
         $('html,body').animate({'scrollTop':'0'} , 600)
     });
   }); 
-  $(window).scroll(function(){
-    if($(window).scrollTop() > $('#Setion1').offset().top - 100 ) {
-      $('#Btn').fadeIn(600)
-    } else {
-      $('#Btn').hide()
-    }
-})
-
-  
-setInterval(()=>{
-
-  $('#Adress').fadeToggle(2500)
-},2500)
-
 
   }
 
