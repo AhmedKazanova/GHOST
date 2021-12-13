@@ -32,10 +32,6 @@ export class UsersService {
   {
    return  this._HttpClient.post('https://route-egypt-api.herokuapp.com/signin' , FormLoginData)
   }
-  LoginNav(FormLoginData:object):Observable<any>
-  {
-   return  this._HttpClient.post('https://route-egypt-api.herokuapp.com/signin' , FormLoginData)
-  }
 
  
 }

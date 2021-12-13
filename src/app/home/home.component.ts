@@ -1,9 +1,8 @@
-import { Component, OnInit , OnDestroy, Output } from '@angular/core';
+import { Component, OnInit , OnDestroy } from '@angular/core';
 import { ApiService } from '../api.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgwWowService } from 'ngx-wow';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 
 declare var $:any;
 
@@ -35,10 +34,10 @@ export class HomeComponent implements OnInit , OnDestroy {
   }
 
     HomePages(PageNumber:number){
-        this.CallingApi=  this._ApiService.GetAll(PageNumber).subscribe(
+        this.CallingApi =  this._ApiService.GetAll(PageNumber).subscribe(
           (Data)=>{
           this.ReturnAll = Data.results 
-          this.totalItems= Data.total_results - 15000
+          this.totalItems = Data.total_results - 19750
           this.page = Data.page
         },(error)=>{
           this.Error = error.ok

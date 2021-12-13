@@ -35,7 +35,7 @@ export class PersonComponent implements OnInit , OnDestroy {
    ReturnPerson(number:number){
     this.CallingApi = this._ApiService.GetPerson( number , "person" ).subscribe(
       (Data)=>{
-      this.totalItems = Data.total_results - 15000
+      this.totalItems = Data.total_results - 19750
       this.AllPerson = Data.results 
       this.page = Data.page
     },(error)=>{

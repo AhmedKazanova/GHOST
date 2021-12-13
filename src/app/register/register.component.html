@@ -10,7 +10,7 @@
         <form [formGroup]='RegisterForm' (ngSubmit)="Register(RegisterForm)">
 
             <div class="col-12 col-md-12 col-lg-8 m-auto">
-                <input formControlName="first_name" type="text" maxlength="8" min="3" placeholder="First Name"
+                <input formControlName="first_name" type="text" maxlength="8" minlength="3" placeholder="First Name"
                     class="form-control my-2 " autofocus>
                 <p *ngIf=" RegisterForm.get('first_name')?.touched && RegisterForm.get('first_name')?.errors?.required "
                     class="alert alert-danger p-1 my-2  ">First Name Is required </p>

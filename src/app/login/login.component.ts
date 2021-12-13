@@ -43,7 +43,9 @@ export class LoginComponent implements OnInit {
           
           localStorage.setItem("userToken" ,response.token )
             this._UsersService.saveData()
-          this._Router.navigate(['Home'])
+            this._Router.navigate(['Home'])
+         
+            
 
         } else {
           this.errors = response.message

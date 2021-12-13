@@ -37,7 +37,7 @@ export class TrendintvComponent implements OnInit , OnDestroy {
    ReturnTv(number:number){
       this.CallingApi = this._ApiService.GetTrendingTv(number,'tv').subscribe(
         (Data)=>{
-      this.totalItems = Data.total_results - 15000
+      this.totalItems = Data.total_results - 19750
       this.AllTv=Data.results
       this.page = Data.page
     

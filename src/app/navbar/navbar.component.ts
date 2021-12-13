@@ -61,18 +61,13 @@ export class NavbarComponent implements OnInit {
   }
  LoginNav(LoginForm: FormGroup) {
     if (LoginForm.valid) {
-      this._UsersService.LoginNav(LoginForm.value).subscribe((response) => {
+      this._UsersService.Login(LoginForm.value).subscribe((response) => {
         if (response.message == 'success') {
           localStorage.setItem("userToken" ,response.token )
           this._UsersService.saveData()
           this._Router.navigate(['Home'])
-         
-          
-
         } else {
-          console.log(response.message)
           alert(this.errors = response.message)
-          
         }
       })
     }
@@ -86,11 +81,10 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(){
-    
       this._UsersService.userData.next(null)
       localStorage.removeItem('userToken');
       this._Router.navigate(['Login']);
-      this.clickclosing()
+      ClickClosing()
   }
 
   

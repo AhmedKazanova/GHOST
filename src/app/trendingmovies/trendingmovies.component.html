@@ -15,9 +15,13 @@
     <div class="container   wow fadeInDown" data-wow-duration="0.8s" data-wow-delay="0.4s">
         <h2 id="Adress">Trending Movies </h2>
         <owl-carousel-o [options]="customOptions">
-            <ng-container *ngFor="let Movie of AllMovies">
+            <ng-container *ngFor="let Movie of AllMovies" >
               <ng-template carouselSlide [id]="Movie.id">
-                <img [src]="ImgSrc+Movie.poster_path" class="p-2" [routerLink]="['/Moviedetails' , Movie.id  ]">
+                <img 
+                 [style.display]="Movie.title != 'More the Merrier'? 'block':'none'"
+                 *ngIf="Movie.title != '365 Days'"
+                   [src]="ImgSrc+Movie.poster_path" class="p-2" 
+                   [routerLink]="['/Moviedetails' , Movie.id  ]">
               </ng-template>
             </ng-container>
           </owl-carousel-o>
@@ -47,7 +51,9 @@
 
     <div class="container">
         <div class="row">
-            <div data-wow-offset="15" data-wow-duration="0.6s" data-wow-delay="0.3s"  *ngFor="let Movie of AllMovies" class="col-12 col-sm-6 col-md-4 col-lg-3  p-3 wow fadeInLeft ">
+            <div data-wow-offset="15" data-wow-duration="0.6s" data-wow-delay="0.3s"  *ngFor="let Movie of AllMovies" class="col-12 col-sm-6 col-md-4 col-lg-3  p-3 wow fadeInLeft "
+             [style.display]="Movie.title != '365 Days'? 'block':'none'"
+             >
                 <!-- fadeInLeft -->
                 <!-- bounceIn -->
                 <!-- bounceInDown -->
@@ -64,7 +70,7 @@
                         class="position-absolute vote d-flex justify-content-center align-items-center text-center top-0 end-0">
                         {{Movie.vote_average}}
                     </span>
-                    <img [src]="ImgSrc+Movie.poster_path " class="w-100">
+                    <img *ngIf="Movie.title != 'More the Merrier'" [src]="ImgSrc+Movie.poster_path " class="w-100">
 
 
                     <div class="FilmTitle d-flex justify-content-center top-0 end-0 start-0 bottom-0 text-center position-absolute ">
