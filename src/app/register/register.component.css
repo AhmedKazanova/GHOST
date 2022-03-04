@@ -111,10 +111,11 @@ input {
     align-items: center;
     font-size: 12px;
     font-weight: 500;
-    height: 44px;
+    
     background-color: gray;
-    top: -0.5px;
-    right: -3px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
     border-top-right-radius: 4.5px;
     border-bottom-right-radius: 4.5px;
 }

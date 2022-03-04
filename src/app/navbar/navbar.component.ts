@@ -1,10 +1,11 @@
 
 
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import jwtDecode from 'jwt-decode';
+import { __values } from 'tslib';
 import { UsersService } from '../users.service';
+
 declare const MyFun:any ;
 declare const ClickClosing:any
 
@@ -20,13 +21,9 @@ export class NavbarComponent implements OnInit {
   datauserlogin:string = ''
   errors:string = ''
   isLogin:boolean = false
-  LoginForm: FormGroup = new FormGroup({
-  email: new FormControl(null, [Validators.required, Validators.pattern('^[A-Za-z0-9]{3,}(\.?|[A-Za-z0-9]){5,}@(yahoo|gmail|ymail|hotmail)\.(com|Com)$')]),
-  password: new FormControl(null, [Validators.required, Validators.min(8), Validators.pattern('^[a-zA-Z0-9]{8,16}$')]),
 
-  })
 
-  constructor(public _UsersService:UsersService , public _Router:Router) { 
+  constructor(public _UsersService:UsersService , public _Router:Router ) { 
 
   
 
@@ -34,13 +31,21 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sayhello()
+
+    
+    
     this._UsersService.userData.subscribe(() => {
       if (this._UsersService.userData.getValue() != null) {
-          this.isLogin = true;
+        this.isLogin = true;
+        setTimeout(() => {
+          this.sayhello()
+        }, 1)
       }
       else {
         this.isLogin = false;
+        setTimeout(() => {
+          this.sayhello()
+        }, 1);
       }
     })
     
@@ -51,27 +56,19 @@ export class NavbarComponent implements OnInit {
 
     let decodeData = JSON.stringify(localStorage.getItem('userToken'))
     this._UsersService.userData.next(jwtDecode(decodeData))
-    this.uservalue = this._UsersService.userData.value
-    this.userName = this.uservalue.first_name
+      this.uservalue = this._UsersService.userData.value
+      this.userName = this.uservalue.first_name
     
-  }
+      
+    }
+   
+    
+  
 
   hope(){
     alert("I hope You liked My Work \n اتمني أن موقعي  قد نال اعجابكم \n Front-End Developer Ahmed Adel ")
   }
- LoginNav(LoginForm: FormGroup) {
-    if (LoginForm.valid) {
-      this._UsersService.Login(LoginForm.value).subscribe((response) => {
-        if (response.message == 'success') {
-          localStorage.setItem("userToken" ,response.token )
-          this._UsersService.saveData()
-          this._Router.navigate(['Home'])
-        } else {
-          alert(this.errors = response.message)
-        }
-      })
-    }
-  }
+
 
   callfun():void{
     MyFun()
@@ -88,6 +85,10 @@ export class NavbarComponent implements OnInit {
   }
 
   
-
+  logoClick() {
+    setTimeout(() => {
+      location.reload()
+    }, 1);
+}
 
 }

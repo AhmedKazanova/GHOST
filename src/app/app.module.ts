@@ -22,9 +22,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +38,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     TrendingmoviesComponent,
     TrendintvComponent,
     TvdatailsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -51,7 +49,10 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     NgbAlertModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+   
+
+
    
     
   ],

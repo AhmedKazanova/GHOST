@@ -39,6 +39,5 @@ export class ApiService {
   {
      return this._HttpClient.get(`https://api.themoviedb.org/3/person/${Person_id}?api_key=f8eeaa0f08e0e19cd33afb0e48afb235&language=en-US`)
   }
-  
 
 }

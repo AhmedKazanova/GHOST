@@ -40,7 +40,7 @@ export class TrendingmoviesComponent implements OnInit , OnDestroy {
       this.AllMovies = Data.results
       this.totalItems = Data.total_results - 19760
       this.page = Data.page
-      console.log(this.AllMovies)
+      
 
     },(error)=>{
       this.Error = error.ok

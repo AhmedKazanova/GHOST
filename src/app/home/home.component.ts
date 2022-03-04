@@ -51,17 +51,11 @@ export class HomeComponent implements OnInit , OnDestroy {
         this._Router.navigate(['Home' , event])
         this.HomePages(event)
     }
-
-  
-
     ngOnDestroy(){
       if( this.CallingApi ) {
         this.CallingApi.unsubscribe()
       }
     }
-
-
-
  customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -86,7 +80,6 @@ export class HomeComponent implements OnInit , OnDestroy {
     },
     nav: false
   }
-
   Jquery():any{
     $(document).ready(()=>{
       $(window).scrollTop();
@@ -96,7 +89,4 @@ export class HomeComponent implements OnInit , OnDestroy {
   }); 
 
   }
-
- 
-
 }

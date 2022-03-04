@@ -5,10 +5,10 @@
 
 <section class="py-5 mb-5 d-flex align-items-center justify-content-center ">
 
-    <div class="container text-center pt-5 mt-5 ">
+    <div class="container-fluid text-center pt-5 mt-5 ">
         <h3 class="my-5 ">Login</h3>
 
-        <div class="col-10 col-md-8 col-lg-6 m-auto">
+        <div class="col-10 col-md-8 col-lg-6 col-xl-4 m-auto">
             <p *ngIf=" LoginForm.get('email')?.touched && LoginForm.get('email')?.errors?.required "
                 class="alert alert-danger p-1 my-2 ">Email Is required </p>
             <p *ngIf="errors" class="alert alert-danger p-0 ">{{errors}}</p>
@@ -20,17 +20,17 @@
             <div class="" >
 
                 <form [formGroup]='LoginForm' (ngSubmit)="Login(LoginForm)">
-                    <input formControlName="email" type="text" placeholder="Enter Your Email" class="form-control"
+                    <input formControlName="email" type="text" placeholder="Enter Your Email" class="form-control py-2 my-4"
                         autofocus>
                    
                         <div class="position-relative">
                             <input formControlName="password" id="password" type="password" minlength="8" maxlength="16"
-                        placeholder="Enter Your Password" class="form-control my-3">
+                        placeholder="Enter Your Password" class="form-control py-2 my-4">
                         <span id="showPassword" (click)="show()" class="show">Show</span>
                         </div>
                   
                     
-                    <button type="submit" class="btn text-white  "> Login </button>
+                    <button type="submit" class="btn text-white mt-4 "> Login </button>
                 </form>
 
             </div>

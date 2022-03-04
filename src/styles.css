@@ -5,20 +5,28 @@
 * Browsers: last 10 version
 */
 
+@font-face {
+    font-family: 'Cairo';
+    src: url('assets/font/Alegreya-Regular.ttf')format("truetype");
+}
+
 *{
     margin: 0px;
     padding: 0px;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Cairo';
+  
     
     
 }
 body , html {
+    font-size: 10px;
     scroll-behavior: smooth;
 }
 body {
 
-    background-image: url(.././src/assets/img/Backround.jpg);
+    background-color:black;
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
     
@@ -41,4 +49,54 @@ body {
 .page-item.active .page-link .sr-only {
     display: none !important;
     
+}
+.radius {
+    border-radius: 10px;
+}
+h1 {
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+h3 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+h4 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+h5 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+h6, p, a, button, input, label, ul, li, div, span , ul , li {
+    font-size: 1.6rem !important;
+    margin: 0;
+}
+
+input:focus::placeholder {
+        visibility: hidden;
+}
+
+input,select,option {
+    font-size:1.6rem !important
+}
+textarea {
+    resize: none !important
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+
 }

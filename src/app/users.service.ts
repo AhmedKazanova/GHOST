@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import jwtDecode from 'jwt-decode';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -11,7 +10,7 @@ export class UsersService {
 
   userData = new BehaviorSubject(null)
 
-  constructor( private _HttpClient:HttpClient , private _Router:Router ) {
+  constructor( private _HttpClient:HttpClient  ) {
      
     if(localStorage.getItem('userToken') != null){
 

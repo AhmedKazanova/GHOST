@@ -22,9 +22,6 @@ const routes: Routes = [
   {path:'Movies' , redirectTo:'Movies/1',pathMatch:'full' },
   {path:'Tv/:id',component:TrendintvComponent},
   {path:'Tv' , redirectTo:'Tv/1',pathMatch:'full' },
-
-
-
   {path:'About',component:AboutComponent},
   {path:'Login',component:LoginComponent},
   {path:'Moviedetails/:id',component:MoviedetailsComponent},

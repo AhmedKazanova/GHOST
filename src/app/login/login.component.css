@@ -99,11 +99,11 @@ input {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
-    height: 41.4px;
+    
     background-color: gray;
-    top: 0.7px;
+    top: 0px;
     right: 0px;
     bottom: 0px;
     border-top-right-radius: 4.5px;

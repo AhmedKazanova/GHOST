@@ -253,29 +253,26 @@ nav h1:hover::after {
 }
 
 /******************************************************/
-.users input:focus,
-.users input ,
-.users button{
-    outline: none;
-    border: none;
-    border: 1px solid white;
-    background-color: transparent;
-    border-radius: 7px;
-}
 
 @media (min-width:0px) and (max-width:576px) {
     .mediaBar {
-        display: block !important;
+        display: inline-block !important;
         
     }
 }
+@media  (max-width:3000px) {
 
-/* User Input */
-@media (min-width:769px) and (max-width:996px) {
-
-    /* Taplet Screen */
-    .users input:nth-child(2) {
-        margin-top: 8px;
-        margin-bottom: 8px;
+    .Bardropdown {
+        top: 99%;
+        left: 0px;
+        width: 100%;
+        text-align: start !important;
+        padding: 0px 15px !important;
+        background-color: black !important;
+        border-radius: 3px;
+    }
+    .Bardropdown li {
+        margin: 10px 0px !important;
     }
 }
+

@@ -13,9 +13,7 @@ constructor(){}
   ngOnInit() {
     progress()
     this.Jquery()
-    setInterval(()=>{
-      $('#Adress').fadeToggle(2500)
-    },2500)
+
 
  
   }
@@ -23,10 +21,10 @@ constructor(){}
   Jquery():void {
     $(window).scroll(function(){
       if($(window).scrollTop() > $('#Setion1').offset().top - 100 ) {
-        $('nav').animate().css({backgroundColor:'rgba(19, 23, 34, 0.9)'}) 
+        $('nav').animate().css({backgroundColor:'rgba(0, 0, 0, 1)'}) 
         $('#Btn').fadeIn(600)
       } else {
-        $('nav').animate().css({backgroundColor:'rgba(19, 23, 34, 0.3)'}) 
+        $('nav').animate().css({backgroundColor:'rgba(19, 23, 34, 0.1)'}) 
         $('#Btn').hide()
       }
   })

@@ -1,12 +1,12 @@
-<nav class="w-100 position-fixed" id="navBar" >
-    <div class="progress-bar position-absolute bg-white bottom-0" id="myBar"></div>
+<nav class="w-100 position-fixed pe-3" id="navBar" >
+    <div class="progress-bar position-absolute bg-white bottom-0 " id="myBar"></div>
     <div class="container  d-flex justify-content-between p-0">
 
         <div class="logo d-flex align-items-center text-center">
-            <h1 [routerLink]="['/Home',1 ]"  class="m-0 ms-3 py-2  text-white position-relative ">Ghost Cinema</h1>
+            <h1 [routerLink]="['/Home',1 ]" (click)="logoClick()"  class="m-0 ms-3 py-2  text-white position-relative ">Ghost </h1>
             <div class="navbar-link text-center d-none d-md-inline-block">
                 <ul class="m-0  mt-2 ms-lg-5 " >
-                    <li [routerLink]="['/Home' ,1 ]"  class="d-inline-block  py-2  position-relative navhover" >Home</li>
+                    <li [routerLink]="['/Home' ,1 ]"   class="d-inline-block  py-2  position-relative navhover" >Home</li>
                     <li routerLink='About' class="d-inline-block ms-3 py-2  position-relative navhover">About</li>
                     <li  class="position-relative" class="d-inline-block ms-3 py-2 position-relative">Trending <svg  width="19"
                             height="25" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -28,33 +28,30 @@
 
         <div class="welcome align-self-center mt-2 d-none d-md-block   ">
 
-            <span class="users  p-1 row d-flex  justify-content-center align-items-center w-75 ms-auto   ">
-                <form [formGroup]='LoginForm' (ngSubmit)="LoginNav(LoginForm)"  *ngIf="!isLogin">
+            <span class="users  p-1  d-flex  w-100 ms-auto   ">
+            
                    
-                    <input formControlName="email" class="m-auto me-lg-1 text-white" type="text w-100" placeholder="E-mail">
-                    <input formControlName="password" class="m-auto my-md-1 text-white" type="password" placeholder="Password">
-                    <button class="mx-md-2 mt-1 mb-lg-2  bg-dark text-white p-1"   type="submit"> Login </button>
-                   
-                    <span  routerLink="Register" class="register ms-lg-1">Register</span>
-                </form>
+                    <span  routerLink="Register" class=" mx-3 " *ngIf="!isLogin">Register</span>
+                    <span  routerLink="Login" class=" mx-3" *ngIf="!isLogin">Login</span>
+               
             </span>
 
-            <span *ngIf="isLogin" (click)="hope()"  class="hi d-none d-md-inline-block "> <svg  width="30" height="22" fill="currentColor" class="bi  text-warning bi-emoji-heart-eyes-fill" viewBox="0 0 16 16">
+            <span *ngIf="isLogin" (click)="hope()"  class="hi d-none d-md-flex  text-center "> <svg  width="30" height="22" fill="currentColor" class="bi  text-warning bi-emoji-heart-eyes-fill  " viewBox="0 0 16 16">
                 <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.559 5.448a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zm-.07-5.448c1.397-.864 3.543 1.838-.953 3.434-3.067-3.554.19-4.858.952-3.434z"/>
-              </svg> Hi <span class="text-primary">{{userName}}</span> </span>
-            <span (click)="logout()" *ngIf="isLogin" class="ms-2 d-none d-md-inline-block ">Logout</span>
+              </svg> <span>Hi</span> <span class="text-primary ms-2"> {{userName}} </span> <span (click)="logout()" *ngIf="isLogin" class="ms-4 d-none d-md-inline text-danger ">Logout</span></span>
+            
         </div>
 
 
-        <div class="mediaBar d-none d-sm-block d-lg-none d-md-none py-1 px-2 my-2 me-4 d-none align-self-center rounded-circle" id='mediaBar' (click)='callfun()'>
+        <div class="mediaBar d-none d-sm-block d-lg-none d-md-none py-1 px-2 my-2 me-0 d-none align-self-center rounded-circle" id='mediaBar' (click)='callfun()'>
             <div class="bar1 bg-white"></div>
             <div class="bar2 bg-white"></div>
             <div class="bar3 bg-white"></div>
         </div>
 
-        <div id="mySidenav" class="sidenav pt-5 bg-dark position-fixed top-0 end-0  h-100">
+        <div id="mySidenav" class="sidenav pt-2 bg-dark position-fixed top-0 end-0  h-100">
 
-            <span href="javascript:void(0)" (click)="clickclosing()" class="closebtn mb-5 position-absolute top-0">&times;</span>
+            <span href="javascript:void(0)" (click)="clickclosing()" class="closebtn mb-5 position-relative top-0 " style="font-size: 30px !important;">&times;</span>
 
            <a  [style.display]="isLogin == true? 'block' : 'none'" (click)="hope()" id="Name"  class="mt-3   position-relative">  {{userName}} <svg  [style.display]="isLogin == true? 'inline-block' : 'none'" width="30" height="22" fill="currentColor" class="bi  text-warning bi-emoji-heart-eyes-fill" viewBox="0 0 16 16">
                 <path [style.display]="isLogin == true? 'block' : 'none'" d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.559 5.448a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zm-.07-5.448c1.397-.864 3.543 1.838-.953 3.434-3.067-3.554.19-4.858.952-3.434z"/>

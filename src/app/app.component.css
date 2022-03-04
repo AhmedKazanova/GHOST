@@ -211,15 +211,15 @@
         126px 943px wheat,
         263px 604px white,
         1546px 692px white;
-    -webkit-animation: animStar 150s linear infinite;
-    animation: animStar 180s linear infinite;
+    -webkit-animation: animStar 100s linear infinite;
+    animation: animStar 100s linear infinite;
 }
 
 .starthird {
     content: " ";
     position: absolute;
-    width: 2.5px;
-    height: 2.5px;
+    width: 3px;
+    height: 3px;
     background: transparent;
     -webkit-box-shadow: 571px 173px #9E9E9E,
         1732px 143px #9E9E9E,
@@ -422,15 +422,15 @@
         263px 604px white,
         1546px 692px wheat;
     -webkit-animation: animStar 40s linear infinite;
-    animation: animStar 60s linear infinite;
+    animation: animStar 40s linear infinite;
 
 }
 
 .starfourth {
     content: " ";
     position: absolute;
-    width: 1.5px;
-    height: 1.5px;
+    width: 2px;
+    height: 2px;
     background: transparent;
     -webkit-box-shadow: 571px 173px#9E9E9E,
         1732px 143px #9E9E9E,
@@ -633,14 +633,14 @@
         263px 604px wheat,
         1546px 692px wheat;
     -webkit-animation: animStar 50s linear infinite;
-    animation: animStar 70s linear infinite;
+    animation: animStar 50s linear infinite;
 }
 
 .starfifth {
     content: " ";
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 2px;
+    height: 2px;
     background: transparent;
     -webkit-box-shadow: 571px 173px #9E9E9E,
         1732px 143px #9E9E9E,
@@ -842,8 +842,8 @@
         126px 943px white,
         263px 604px white,
         1546px 692px white;
-    -webkit-animation: animStar 80s linear infinite;
-    animation: animStar 90s linear infinite;
+    -webkit-animation: animStar 10s linear infinite;
+    animation: animStar 10s linear infinite;
 
 }
 
