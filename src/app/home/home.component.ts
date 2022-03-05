@@ -27,10 +27,20 @@ export class HomeComponent implements OnInit , OnDestroy {
   }
 
   ngOnInit(): void {
+   
     this._wowservice.init()
     this.Jquery()
     this.id = this._ActivatedRoute.snapshot.params.id
     this.HomePages(this.id)
+
+
+
+    
+    
+ 
+
+    
+
   }
 
     HomePages(PageNumber:number){

@@ -3,7 +3,6 @@
 
 
 
-
 /**** Just Page About Us****/
 function Typeing() {
     sayHi(() => {

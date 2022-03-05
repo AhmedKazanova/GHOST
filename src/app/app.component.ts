@@ -14,7 +14,19 @@ constructor(){}
     progress()
     this.Jquery()
 
+    let AudioX = new Audio('assets/sound/rock.mp3')
+   
+    $('#Mute').click(function () {
 
+      $('#Mute').toggleClass('play')
+
+      if ($('#Mute').hasClass('play')) {
+        AudioX.play()
+      } else {
+        AudioX.pause()
+      }
+
+    })
  
   }
 
